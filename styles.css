@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#numHorses, #startButton {
+    margin-left: 10px;
+}
+
+#raceArea {
+    position: relative;
+    height: 300px;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+    background: #e9ecef;
+}
+
+.horse {
+    position: absolute;
+    width: 50px;
+}
+
+.horse img {
+    width: 100%;
+}
+
+.horse p {
+    position: absolute;
+    top: -20px;
+    white-space: nowrap;
+    padding: 2px;
+    font-size: 12px;
+    text-align: center;
+}
