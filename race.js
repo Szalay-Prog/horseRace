@@ -16,7 +16,7 @@ function startRace(numHorses) {
     document.getElementById('raceArea').style.height = (numHorses * 100) + 'px';
     for (let i = 0; i < numHorses; i++) {
         let horseName = prompt("Enter name for horse " + (i+1));
-        horseNames.push(horseName);
+        horseNames[i] = horseName;
         let horseDiv = document.createElement('div');
         horseDiv.classList.add('horse');
         horseDiv.id = 'horse' + i;
@@ -35,13 +35,15 @@ function startRace(numHorses) {
 
         document.getElementById('raceArea').appendChild(horseDiv);
         horsePositions[i] = 0;
+        horseFinishTimes[i] = Number.MAX_VALUE;  // Start with a maximum finish time
     }
 
     let raceInterval = setInterval(() => {
         for (let i = 0; i < numHorses; i++) {
             horsePositions[i] += Math.random() * 10;
             document.getElementById('horse' + i).style.left = horsePositions[i] + 'px';
-            if (horsePositions[i] >= document.getElementById('raceArea').offsetWidth - 50) {
+            if (horsePositions[i] >= document.getElementById('raceArea').offsetWidth - 50 && horseFinishTimes[i] === Number.MAX_VALUE) {
+                // Record the finish time only once when the horse crosses the finish line
                 horseFinishTimes[i] = new Date().getTime();
             }
         }
