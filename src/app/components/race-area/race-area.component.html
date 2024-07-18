@@ -1,0 +1,6 @@
+<div #raceArea class="race-area">
+  <div class="finish-line"></div>
+  <div class="racers-container">
+    <app-racer *ngFor="let racer of racers$ | async" [racer]="racer" [ngStyle]="{'--racer-top': racer.topPosition + 'px'}"></app-racer>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="racer" [style.left.px]="racer.position" [style.top.px]="racer.topPosition">
+  <div class="svg-container" [ngStyle]="{'--racer-color': racer.color}">
+    <img src="../../../assets/images/horse.svg" class="racer-image" alt="Racer">
+  </div>
+  <p [style.color]="racer.color">{{ racer.name }}</p>
+</div>

@@ -1,0 +1,95 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px 20px 20px;
+}
+
+.controls-container {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.race-area-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.race-area {
+  position: relative;
+  width: 90vw; /* Adjust width to leave padding */
+  height: calc(90vh - 100px); /* Adjust height to leave padding */
+  background: linear-gradient(#fff, #ddd);
+  border: 10px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.racers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.finish-line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #000 25%, transparent 25%), linear-gradient(-45deg, #000 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #000 75%), linear-gradient(-45deg, transparent 75%, #000 75%);
+  background-size: 80px 80px;
+  background-position: 0 0, 0 40px, 40px -40px, -40px 0px;
+  border-left: 5px solid #000;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1200px) {
+  .finish-line {
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  }
+}
+
+@media (max-width: 900px) {
+  .finish-line {
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .finish-line {
+    background-size: 30px 30px;
+    background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .finish-line {
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+}

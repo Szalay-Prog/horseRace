@@ -1,0 +1,6 @@
+1. Dynamically move the programmatic finish line so that when I resize in the middle of a race, the finish line moves accordingly.
+        - more on this, horses should resize and move up and down Dynamically as well
+
+2. Add visual banners behind each horse so that I can see their time and position updated in real time.
+
+3. Apply more styling to the settings dashboard.
