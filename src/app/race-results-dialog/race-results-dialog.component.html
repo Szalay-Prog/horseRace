@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Race Results</h1>
+<div mat-dialog-content>
+  <p>Here are the final results of the race:</p>
+  <ol>
+    <li *ngFor="let result of data.results">{{ result.name }} - {{ result.time | date:'mm:ss.SSS' }}</li>
+  </ol>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

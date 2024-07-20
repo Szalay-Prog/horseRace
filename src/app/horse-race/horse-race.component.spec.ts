@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RaceAreaComponent } from './race-area.component';
+import { HorseRaceComponent } from './horse-race.component';
 
-describe('RaceAreaComponent', () => {
-  let component: RaceAreaComponent;
-  let fixture: ComponentFixture<RaceAreaComponent>;
+describe('HorseRaceComponent', () => {
+  let component: HorseRaceComponent;
+  let fixture: ComponentFixture<HorseRaceComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RaceAreaComponent]
+      declarations: [HorseRaceComponent]
     });
-    fixture = TestBed.createComponent(RaceAreaComponent);
+    fixture = TestBed.createComponent(HorseRaceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

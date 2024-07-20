@@ -1,0 +1,19 @@
+<mat-card>
+    <h1>Set Up Your Race</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Number of Horses</mat-label>
+        <input matInput type="number" formControlName="numberOfHorses" min="1" max="20">
+      </mat-form-field>
+  
+      <div *ngFor="let horse of horses; let i = index">
+        <mat-form-field appearance="fill">
+          <mat-label>Horse {{ i + 1 }} Name</mat-label>
+          <input matInput formControlName="horse{{i}}">
+        </mat-form-field>
+      </div>
+  
+      <button mat-raised-button color="primary" type="submit">Start Race</button>
+    </form>
+  </mat-card>
+  
