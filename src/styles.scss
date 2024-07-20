@@ -23,7 +23,7 @@ $horse-race-app-warn: mat.define-palette(mat.$red-palette);
 $horse-race-app-theme: mat.define-light-theme((
   color: (
     primary: $horse-race-app-primary,
-    accent: $-race-ahorsepp-accent,
+    accent: $horse-race-app-accent,
     warn: $horse-race-app-warn,
   )
 ));
