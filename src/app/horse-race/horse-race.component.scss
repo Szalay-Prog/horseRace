@@ -98,4 +98,16 @@ mat-card {
     border-left: 1px solid #000;
     z-index: 1; /* Ensure finish line is below the horses */
   }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+  }
+  
+  .button-group button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
   

@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { HorseStateService } from '../horse-state.service';
+
 import { RaceResultsDialog } from '../race-results-dialog/race-results-dialog.component';
 
 @Component({
@@ -16,9 +17,10 @@ export class HorseRaceComponent implements OnInit {
   finishStates: string[] = [];
   raceInterval: any;
   startTime: number = 0;
-  raceFinished: boolean = false; // Flag to track if the race is finished
-  racePaused: boolean = false; // Flag to track if the race is paused
-  raceStarted: boolean = false; // Flag to track if the race has started
+  raceStarted: boolean = false;
+  racePaused: boolean = false;
+  raceFinished: boolean = false;
+  speedFactors: number[] = []; // Array to store speed factors for each horse
 
   constructor(
     private router: Router,
@@ -33,6 +35,7 @@ export class HorseRaceComponent implements OnInit {
     this.positions = Array(this.horses.length).fill(0);
     this.times = Array(this.horses.length).fill(0);
     this.finishStates = Array(this.horses.length).fill('');
+    this.speedFactors = Array(this.horses.length).fill(1); // Initialize speed factors
 
     // Dynamically set the height of the race track
     const raceTrack = this.elRef.nativeElement.querySelector('.race-track');
@@ -56,7 +59,8 @@ export class HorseRaceComponent implements OnInit {
       let allFinished = true;
       for (let i = 0; i < this.positions.length; i++) {
         if (this.positions[i] < 100) {
-          this.positions[i] += Math.random() * 2;
+          this.speedFactors[i] = this.getSpeedFactor(); // Update speed factor
+          this.positions[i] += Math.random() * this.speedFactors[i]; // Adjust increment value to make the race take longer
           this.times[i] = Date.now() - this.startTime;
           if (this.positions[i] >= 100) {
             this.positions[i] = 100;
@@ -78,6 +82,10 @@ export class HorseRaceComponent implements OnInit {
         console.log('Race finished!');
       }
     }, 100);
+  }
+
+  getSpeedFactor() {
+    return Math.random() * 0.75;
   }
 
   pauseResumeRace() {

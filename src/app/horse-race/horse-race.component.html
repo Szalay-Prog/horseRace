@@ -1,22 +1,24 @@
 <mat-card>
-    <h1>Horse Race</h1>
-    <div class="race-track">
-      <div *ngFor="let horse of horses; let i = index" class="horse-row" [ngClass]="finishStates[i]">
-        <div class="horse" [style.left.%]="positions[i]">
-          <img src="assets/horse.svg" [alt]="horse" />
-        </div>
-        <div class="horse-info">
-          <div class="horse-name">{{ horse }}</div>
-          <div class="timer">{{ formatTime(times[i]) }}</div>
-        </div>
+  <h1>Horse Race</h1>
+  <div class="race-track">
+    <div *ngFor="let horse of horses; let i = index" class="horse-row" [ngClass]="finishStates[i]">
+      <div class="horse" [style.left.%]="positions[i]">
+        <img src="assets/horse.svg" [alt]="horse" />
       </div>
-      <img src="assets/finish-line.svg" class="finish-line" />
+      <div class="horse-info">
+        <div class="horse-name">{{ horse }}</div>
+        <div class="timer">{{ formatTime(times[i]) }}</div>
+      </div>
     </div>
+    <img src="assets/finish-line.svg" class="finish-line" />
+  </div>
+    <div class="button-group">
     <button *ngIf="!raceStarted && !raceFinished" mat-raised-button color="primary" (click)="startRace()">Start Race</button>
     <button *ngIf="raceStarted && !raceFinished" mat-raised-button color="primary" (click)="pauseResumeRace()">
       {{ racePaused ? 'Resume Race' : 'Pause Race' }}
     </button>
     <button *ngIf="raceFinished" mat-raised-button color="primary" (click)="openResultsDialog()">View Results</button>
     <button mat-raised-button color="primary" (click)="setup()">Setup</button>
+    </div>
   </mat-card>
   
