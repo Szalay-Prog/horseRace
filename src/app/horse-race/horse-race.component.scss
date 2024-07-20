@@ -1,0 +1,101 @@
+mat-card {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .race-track {
+    position: relative;
+    width: 100%;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  .horse-row {
+    position: relative;
+    height: 50px; /* Adjust height as needed */
+    border-bottom: 1px solid #ccc; /* Optional, for separating rows */
+    display: flex;
+    align-items: center;
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s, border 0.5s;
+  &:nth-child(odd) {
+    background-color: #f9f9f9a9; /* Lighter shade */
+  }
+
+  &:nth-child(even) {
+    background-color: #ffffff; /* Normal background */
+  }
+}
+  
+  .horse-row.finished {
+    background-color: green;
+    color: white;
+  }
+  
+  .horse-row.gold {
+  background: linear-gradient(45deg, #FFD700, #FFC107);
+  color: black;
+  background-image: url('../../assets/gold.jpg'); /* Optional background image */
+  background-size: cover;
+}
+
+.horse-row.silver {
+  background: linear-gradient(45deg, #C0C0C0, #B0B0B0);
+  color: black;
+  background-image: url('../../assets/silver.jpg'); /* Optional background image */
+}
+
+.horse-row.bronze {
+  background: linear-gradient(45deg, #CD7F32, #C76A30);
+  color: black;
+  background-image: url('../../assets/bronze.jpg'); /* Optional background image */
+}
+  
+  .horse-row.shaded {
+    background-color: #f0f0f0; /* Shaded out */
+    color: #888;
+  }
+  
+  .horse {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transition: left 0.1s;
+    z-index: 2; /* Ensure horses are above the finish line */
+  }
+  
+  .horse img {
+    width: 50px; /* Adjust size as needed */
+    margin-right: 10px;
+  }
+  
+  .horse-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 60px; /* Space for horse image */
+    position: relative;
+  }
+  
+  .horse-name {
+    position: absolute;
+    padding-left: 60px; /* Space for horse image */
+    left: 0;
+  }
+  
+  .timer {
+    position: absolute;
+    left: 40%;
+  }
+  
+  .finish-line {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    border-left: 1px solid #000;
+    z-index: 1; /* Ensure finish line is below the horses */
+  }
+  

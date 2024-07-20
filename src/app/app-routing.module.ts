@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RaceAreaComponent } from './components/race-area/race-area.component';
-import { SettingsComponent } from './components/settings/settings.component';
+import { HorseRaceSetupComponent } from './horse-race-setup/horse-race-setup.component';
+import { HorseRaceComponent } from './horse-race/horse-race.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/race', pathMatch: 'full' },
-  { path: 'race', component: RaceAreaComponent },
-  { path: 'settings', component: SettingsComponent },
-  // Add other routes here
+  { path: '', redirectTo: '/setup', pathMatch: 'full' },
+  { path: 'setup', component: HorseRaceSetupComponent },
+  { path: 'race', component: HorseRaceComponent }
 ];
 
 @NgModule({
